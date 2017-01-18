@@ -11,6 +11,7 @@ public class StringController
 	StringBuilder number1;
 	StringBuilder number2;
 	StringBuilder total;
+	StringBuilder result;
 	int cNumber;
 	int carry;
 	private Scanner userInput;
@@ -28,17 +29,21 @@ public class StringController
 	{
 		userInput = new Scanner(System.in);
 		
-		number1 = new StringBuilder(userInput.nextLine());
-		number2 = new StringBuilder(userInput.nextLine());
-		
+		number1 = new StringBuilder();
+		number2 = new StringBuilder();
+		total = new StringBuilder();
+		result = new StringBuilder();
 		
 	}
 	
 	
 	public void start()
 	{
-		int length;
-		if(number1.length() > number2.length())
+		number1.append(userInput.nextLine());
+		number2.append(userInput.nextLine());
+		
+		int length = -1;
+		if(number1.length() >= number2.length())
 		{
 			length = number1.length();
 		}
@@ -57,14 +62,15 @@ public class StringController
 		for(int index = 0; index < length; index++)
 		{
 			int digit1 = Integer.parseInt(Character.toString(number1.charAt(0)));
-			number2.deleteCharAt(0);
+			number1.deleteCharAt(0);
 			System.out.println(digit1);
-			int digit2 = Integer.parseInt(Character.toString(number1.charAt(0)));
+			int digit2 = Integer.parseInt(Character.toString(number2.charAt(0)));
 			number2.deleteCharAt(0);
-			System.out.println(digit1);
+			System.out.println(digit2);
 			
-			StringBuilder result = new StringBuilder(digit1 + digit2);
-			System.out.println(result);
+			result.delete(0, result.length());
+			result.append(digit1 + digit2);
+			System.out.println(result.toString());
 		}
 		
 	}
