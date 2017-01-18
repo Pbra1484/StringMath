@@ -10,6 +10,7 @@ public class StringController
 	
 	StringBuilder number1;
 	StringBuilder number2;
+	StringBuilder total;
 	int cNumber;
 	int carry;
 	private Scanner userInput;
@@ -43,7 +44,7 @@ public class StringController
 		}
 		else
 		{
-			String temp = number1;
+			StringBuilder temp = number1;
 			number1 = number2;
 			number2 = temp;
 			length = number1.length();
@@ -56,8 +57,14 @@ public class StringController
 		for(int index = 0; index < length; index++)
 		{
 			int digit1 = Integer.parseInt(Character.toString(number1.charAt(0)));
+			number2.deleteCharAt(0);
+			System.out.println(digit1);
+			int digit2 = Integer.parseInt(Character.toString(number1.charAt(0)));
+			number2.deleteCharAt(0);
+			System.out.println(digit1);
 			
-			
+			StringBuilder result = new StringBuilder(digit1 + digit2);
+			System.out.println(result);
 		}
 		
 	}
