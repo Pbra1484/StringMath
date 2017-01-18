@@ -1,15 +1,18 @@
 package string.controller;
 
+import java.util.Scanner;
+import java.lang.StringBuilder;
+
 public class StringController 
 {
 	
 	
 	
-	String number1;
-	String number2;
+	StringBuilder number1;
+	StringBuilder number2;
 	int cNumber;
 	int carry;
-	
+	private Scanner userInput;
 	
 	
 	
@@ -22,6 +25,11 @@ public class StringController
 	
 	StringController()
 	{
+		userInput = new Scanner(System.in);
+		
+		number1 = new StringBuilder(userInput.nextLine());
+		number2 = new StringBuilder(userInput.nextLine());
+		
 		
 	}
 	
@@ -41,8 +49,13 @@ public class StringController
 			length = number1.length();
 		}
 		
+		
+		
+		
+		
 		for(int index = 0; index < length; index++)
 		{
+			int digit1 = Integer.parseInt(Character.toString(number1.charAt(0)));
 			
 			
 		}
