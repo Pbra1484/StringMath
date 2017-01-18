@@ -42,6 +42,9 @@ public class StringController
 		number1.append(userInput.nextLine());
 		number2.append(userInput.nextLine());
 		
+		/*
+		 * makes the longer StringBuilder into number1
+		 */
 		int length = -1;
 		if(number1.length() >= number2.length())
 		{
@@ -61,6 +64,10 @@ public class StringController
 		
 		for(int index = 0; index < length; index++)
 		{
+			/*
+			 * gets the first characters in the number strings
+			 * cannot handle being fed non number characters
+			 */
 			int digit1 = Integer.parseInt(Character.toString(number1.charAt(0)));
 			number1.deleteCharAt(0);
 			System.out.println(digit1);
@@ -68,9 +75,15 @@ public class StringController
 			number2.deleteCharAt(0);
 			System.out.println(digit2);
 			
+			/*
+			 * clears the result StringBuilder and adds the digits together into result
+			 */
+			
 			result.delete(0, result.length());
 			result.append(digit1 + digit2);
 			System.out.println(result.toString());
+			
+			
 		}
 		
 	}
