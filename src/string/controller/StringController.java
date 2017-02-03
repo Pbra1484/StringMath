@@ -70,7 +70,7 @@ public class StringController
 		{
 			/*
 			 * gets the first characters in the number strings
-			 * cannot handle being fed non number characters
+			 * cannot handle being fed non number characters or doubles
 			 */
 			int digit1 = Integer.parseInt(Character.toString(number1.charAt(number1.length()-1)));
 			int digit2 = 0;
@@ -91,24 +91,29 @@ public class StringController
 			}
 			
 			/*
-			 * clears the result StringBuilder and adds the digits together into result
+			 * prints out the amount being carried over
 			 */
-			
-			
 			print("carry is:");
 			System.out.println(carry);
 			
-			
+			/*
+			 * clears the result StringBuilder and adds the digits together into result
+			 */
 			result.delete(0, result.length());
 			result.append(digit1 + digit2 + carry);
 			
 
-			
+			/*
+			 * prints the result and adds it to the end of total
+			 */
 			print("result is:");
 			System.out.println(result.toString());
 			total.append(result.charAt(result.length()-1));
 			result.deleteCharAt(result.length()-1);
 			
+			/*
+			 * checks for carrying over
+			 */
 			if(result.length() != 0)
 			{
 				carry = Integer.parseInt(Character.toString(result.charAt(0)));
@@ -119,12 +124,16 @@ public class StringController
 			}
 			
 		}
-		
+		/*
+		 * adds the last carry to the end of total
+		 */
 		if(carry != 0)
 		{
 			total.append(carry);
 		}
-		
+		/*
+		 * reverses and prits total so it can be read
+		 */
 		total.reverse();
 		print("the total is:");
 		System.out.println(total);
