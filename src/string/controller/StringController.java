@@ -28,7 +28,7 @@ public class StringController
 	StringController()
 	{
 		userInput = new Scanner(System.in);
-		
+		carry = 0;
 		number1 = new StringBuilder();
 		number2 = new StringBuilder();
 		total = new StringBuilder();
@@ -73,32 +73,55 @@ public class StringController
 			 * cannot handle being fed non number characters
 			 */
 			int digit1 = Integer.parseInt(Character.toString(number1.charAt(number1.length()-1)));
+			int digit2 = 0;
 			number1.deleteCharAt(number1.length()-1);
+			print("digit 1 is:");
 			System.out.println(digit1);
 			
 			if(number2.length() != 0)
 			{
-				int digit2 = Integer.parseInt(Character.toString(number2.charAt(number2.length()-1)));;
-				number2.deleteCharAt(0);
+				digit2 = Integer.parseInt(Character.toString(number2.charAt(number2.length()-1)));;
+				number2.deleteCharAt(number2.length()-1);
+				print("digit 2 is:");
 				System.out.println(digit2);
 			}
 			else
 			{
-				System.out.println("Number 2 over defalting to 0");
-				int digit2 = 0;
+				print("Number 2 complete defalting to 0");
 			}
 			
 			/*
 			 * clears the result StringBuilder and adds the digits together into result
 			 */
 			
-			result.delete(0, result.length());
-			result.append(digit1 + digit2);
-			System.out.println(result.toString());
 			
+			print("carry is:");
+			System.out.println(carry);
+			
+			
+			result.delete(0, result.length());
+			result.append(digit1 + digit2 + carry);
+			
+
+			
+			print("result is:");
+			System.out.println(result.toString());
+			total.append(result.charAt(result.length()-1));
+			result.deleteCharAt(result.length()-1);
+			
+			if(result.length() != 0)
+			{
+				carry = Integer.parseInt(Character.toString(result.charAt(0)));
+			}
+			else
+			{
+				carry = 0;
+			}
 			
 		}
 		
+		total.reverse();
+		System.out.println(total);
 	}
 	
 	public  void print(String print)
