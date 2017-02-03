@@ -46,34 +46,47 @@ public class StringController
 		 * makes the longer StringBuilder into number1
 		 */
 		int length = -1;
+		int slength = -1;
 		if(number1.length() >= number2.length())
 		{
-			length = number1.length();
+			length = number1.length() - 1;
+			slength = number2.length() - 1;
+			
 		}
 		else
 		{
 			StringBuilder temp = number1;
 			number1 = number2;
 			number2 = temp;
-			length = number1.length();
+			length = number1.length() - 1;
+			slength = number2.length() - 1;
 		}
 		
 		
 		
 		
 		
-		for(int index = 0; index < length; index++)
+		for(int index = length; index >= 0; index--)
 		{
 			/*
 			 * gets the first characters in the number strings
 			 * cannot handle being fed non number characters
 			 */
-			int digit1 = Integer.parseInt(Character.toString(number1.charAt(0)));
-			number1.deleteCharAt(0);
+			int digit1 = Integer.parseInt(Character.toString(number1.charAt(number1.length()-1)));
+			number1.deleteCharAt(number1.length()-1);
 			System.out.println(digit1);
-			int digit2 = Integer.parseInt(Character.toString(number2.charAt(0)));
-			number2.deleteCharAt(0);
-			System.out.println(digit2);
+			
+			if(number2.length() != 0)
+			{
+				int digit2 = Integer.parseInt(Character.toString(number2.charAt(number2.length()-1)));;
+				number2.deleteCharAt(0);
+				System.out.println(digit2);
+			}
+			else
+			{
+				System.out.println("Number 2 over defalting to 0");
+				int digit2 = 0;
+			}
 			
 			/*
 			 * clears the result StringBuilder and adds the digits together into result
