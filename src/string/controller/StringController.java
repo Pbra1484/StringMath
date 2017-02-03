@@ -120,7 +120,13 @@ public class StringController
 			
 		}
 		
+		if(carry != 0)
+		{
+			total.append(carry);
+		}
+		
 		total.reverse();
+		print("the total is:");
 		System.out.println(total);
 	}
 	
