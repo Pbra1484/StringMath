@@ -47,6 +47,53 @@ public class StringController
 		 */
 		int length = -1;
 		int slength = -1;
+		
+		if(number1.indexOf(".") != -1 || number2.indexOf(".") != -1)
+		{
+			if(number1.indexOf(".") != -1)
+			{
+				StringBuilder sub = new StringBuilder(number1.substring(number1.indexOf(".") + 1));
+
+				
+				if(number2.indexOf(".") != -1)
+				{
+					
+				}
+				else
+				{
+					number2.append(".");
+					for(int zeros = 0; zeros < sub.length(); zeros++)
+					{
+						number2.append("0");
+					}
+				}
+			}
+			else if(number2.indexOf(".") != -1)
+			{
+				StringBuilder sub2 = new StringBuilder(number2.substring(number2.indexOf(".") + 1));
+
+				
+				if(number1.indexOf(".") != -1)
+				{
+					int zeros = Math.abs((number1.length() - number1.indexOf(".")) - sub2.length());
+				}
+				else
+				{
+					number1.append(".");
+					for(int zeros = 0; zeros < sub2.length(); zeros++)
+					{
+						number1.append("0");
+					}
+				}
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
 		if(number1.length() >= number2.length())
 		{
 			length = number1.length() - 1;
