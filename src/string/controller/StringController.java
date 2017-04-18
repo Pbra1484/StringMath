@@ -61,7 +61,7 @@ public class StringController
 		 */
 		
 		
-		int length = -1;
+//		int length = -1;
 		
 		
 //		if(number1.length() >= number2.length())
@@ -79,163 +79,159 @@ public class StringController
 //		}
 		
 		
-		System.out.println(number1);
-		System.out.println(number2);
+//		System.out.println(number1);
+//		System.out.println(number2);
 		
 		
 		
-		if(number1.indexOf(".") != -1 || number2.indexOf(".") != -1)
-		{
-			if(number1.indexOf(".") != -1)
-			{
-				StringBuilder sub = new StringBuilder(number1.substring(number1.indexOf(".") + 1));
-
-				System.out.println(sub);
-				
-				if(number2.indexOf(".") != -1)
-				{
-					StringBuilder sub2 = new StringBuilder(number2.substring(number2.indexOf(".") + 1));
-					
-					System.out.println(sub2);
-					
-					for(int zeros = Math.abs(sub2.length() - sub.length()); zeros > 0; zeros--)
-					{
-						
-						if(sub.length() > sub2.length())
-						{
-							number2.append("0");
-						}
-						else
-						{
-							number1.append("0");
-						}
-					}
-				}
-				else
-				{
-					number2.append(".");
-					for(int zeros = 0; zeros < sub.length(); zeros++)
-					{
-						number2.append("0");
-					}
-				}
-			}
-			else if(number2.indexOf(".") != -1)
-			{
-				StringBuilder sub2 = new StringBuilder(number2.substring(number2.indexOf(".") + 1));
-
-				
-				if(number1.indexOf(".") != -1)
-				{
-					
-					for(int zeros = Math.abs((number1.length() - number1.indexOf(".")) - sub2.length()); zeros < sub2.length(); zeros++)
-					{
-						number1.append("0");
-					}
-				}
-				else
-				{
-					number1.append(".");
-					for(int zeros = 0; zeros < sub2.length(); zeros++)
-					{
-						number1.append("0");
-					}
-				}
-			}
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		System.out.println(number1);
-		System.out.println(number2);
-		
-		
-//		
-//		for(int index = length; index >= 0; index--)
+//		if(number1.indexOf(".") != -1 || number2.indexOf(".") != -1)
 //		{
-//			/*
-//			 * gets the first characters in the number strings
-//			 * cannot handle being fed non number characters or doubles
-//			 */
-//			int digit1 = Integer.parseInt(Character.toString(number1.charAt(number1.length()-1)));
-//			int digit2 = 0;
-//			number1.deleteCharAt(number1.length()-1);
-//			print("digit 1 is:");
-//			System.out.println(digit1);
-//			
-//			if(number2.length() != 0)
+//			if(number1.indexOf(".") != -1)
 //			{
-//				digit2 = Integer.parseInt(Character.toString(number2.charAt(number2.length()-1)));;
-//				number2.deleteCharAt(number2.length()-1);
-//				print("digit 2 is:");
-//				System.out.println(digit2);
-//			}
-//			else
-//			{
-//				print("Number 2 complete defalting to 0");
-//			}
-//			
-//			/*
-//			 * prints out the amount being carried over
-//			 */
-//			print("carry is:");
-//			System.out.println(carry);
-//			
-//			/*
-//			 * clears the result StringBuilder and adds the digits together into result
-//			 */
-//			result.delete(0, result.length());
-//			result.append(digit1 + digit2 + carry);
-//			
+//				StringBuilder sub = new StringBuilder(number1.substring(number1.indexOf(".") + 1));
 //
-//			/*
-//			 * prints the result and adds it to the end of total
-//			 */
-//			print("result is:");
-//			System.out.println(result.toString());
-//			total.append(result.charAt(result.length()-1));
-//			result.deleteCharAt(result.length()-1);
-//			
-//			/*
-//			 * checks for carrying over
-//			 */
-//			if(result.length() != 0)
-//			{
-//				carry = Integer.parseInt(Character.toString(result.charAt(0)));
+//				System.out.println(sub);
+//				
+//				if(number2.indexOf(".") != -1)
+//				{
+//					StringBuilder sub2 = new StringBuilder(number2.substring(number2.indexOf(".") + 1));
+//					
+//					System.out.println(sub2);
+//					
+//					for(int zeros = Math.abs(sub2.length() - sub.length()); zeros > 0; zeros--)
+//					{
+//						
+//						if(sub.length() > sub2.length())
+//						{
+//							number2.append("0");
+//						}
+//						else
+//						{
+//							number1.append("0");
+//						}
+//					}
+//				}
+//				else
+//				{
+//					number2.append(".");
+//					for(int zeros = 0; zeros < sub.length(); zeros++)
+//					{
+//						number2.append("0");
+//					}
+//				}
 //			}
-//			else
+//			else if(number2.indexOf(".") != -1)
 //			{
-//				carry = 0;
+//				StringBuilder sub2 = new StringBuilder(number2.substring(number2.indexOf(".") + 1));
+//
+//				
+//				if(number1.indexOf(".") != -1)
+//				{
+//					
+//					for(int zeros = Math.abs((number1.length() - number1.indexOf(".")) - sub2.length()); zeros < sub2.length(); zeros++)
+//					{
+//						number1.append("0");
+//					}
+//				}
+//				else
+//				{
+//					number1.append(".");
+//					for(int zeros = 0; zeros < sub2.length(); zeros++)
+//					{
+//						number1.append("0");
+//					}
+//				}
 //			}
-//			
 //		}
-//		/*
-//		 * adds the last carry to the end of total
-//		 */
-//		if(carry != 0)
-//		{
-//			total.append(carry);
-//		}
-//		/*
-//		 * reverses and prits total so it can be read
-//		 */
-//		total.reverse();
-//		print("the total is:");
-//		System.out.println(total);
+		
+		ajustDecemals();
+		
+		
+		
+		
+		
+		
+		
+		
+		System.out.println(number1);
+		System.out.println(number2);
+		
+		
+		
+		for(int index = length; index >= 0; index--)
+		{
+			/*
+			 * gets the first characters in the number strings
+			 * cannot handle being fed non number characters or doubles
+			 */
+			int digit1 = Integer.parseInt(Character.toString(number1.charAt(number1.length()-1)));
+			int digit2 = 0;
+			number1.deleteCharAt(number1.length()-1);
+			System.out.println("digit 1 is:");
+			System.out.println(digit1);
+			
+			if(number2.length() != 0)
+			{
+				digit2 = Integer.parseInt(Character.toString(number2.charAt(number2.length()-1)));;
+				number2.deleteCharAt(number2.length()-1);
+				System.out.println("digit 2 is:");
+				System.out.println(digit2);
+			}
+			else
+			{
+				System.out.println("Number 2 complete defalting to 0");
+			}
+			
+			/*
+			 * prints out the amount being carried over
+			 */
+			System.out.println("carry is:");
+			System.out.println(carry);
+			
+			/*
+			 * clears the result StringBuilder and adds the digits together into result
+			 */
+			result.delete(0, result.length());
+			result.append(digit1 + digit2 + carry);
+			
+
+			/*
+			 * prints the result and adds it to the end of total
+			 */
+			System.out.println("result is:");
+			System.out.println(result.toString());
+			total.append(result.charAt(result.length()-1));
+			result.deleteCharAt(result.length()-1);
+			
+			/*
+			 * checks for carrying over
+			 */
+			if(result.length() != 0)
+			{
+				carry = Integer.parseInt(Character.toString(result.charAt(0)));
+			}
+			else
+			{
+				carry = 0;
+			}
+			
+		}
+		/*
+		 * adds the last carry to the end of total
+		 */
+		if(carry != 0)
+		{
+			total.append(carry);
+		}
+		/*
+		 * reverses and prits total so it can be read
+		 */
+		total.reverse();
+		System.out.println("the total is:");
+		System.out.println(total);
 	}
 	
 
-	public  void print(String print)
-	{
-		System.out.println(print);
-	}
 
 	
 	public boolean isValid(StringBuilder test)
@@ -274,7 +270,40 @@ public class StringController
 	
 	
 	
-	
+	private void ajustDecemals()
+	{
+		if(number1.indexOf(".") != -1 || number2.indexOf(".") != -1)
+		{
+
+			if(number1.indexOf(".") == -1)
+			{
+				number1.append(".");
+			}
+			else if(number2.indexOf(".") == -1)
+			{
+				number2.append(".");
+			}
+			
+			StringBuilder sub = new StringBuilder(number1.substring(number1.indexOf(".") + 1));
+			StringBuilder sub2 = new StringBuilder(number2.substring(number2.indexOf(".") + 1));
+			
+//			System.out.println(sub);
+//			System.out.println(sub2);
+			
+			for(int zeros = Math.abs(sub2.length() - sub.length()); zeros > 0; zeros--)
+			{
+				
+				if(sub.length() > sub2.length())
+				{
+					number2.append("0");
+				}
+				else
+				{
+					number1.append("0");
+				}
+			}
+		}
+	}
 	
 	
 	
