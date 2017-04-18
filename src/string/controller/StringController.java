@@ -46,7 +46,7 @@ public class StringController
 		
 		if(isValid(number1) && isValid(number2))
 		{
-			System.out.println("is valid");
+			System.out.println("valid numbers");
 		}
 		else
 		{
@@ -57,14 +57,14 @@ public class StringController
 			System.out.println("invalid numbers");
 		}
 		
-		/*
-		 * makes the longer StringBuilder into number1
-		 */
-		
-		
+//		/*
+//		 * makes the longer StringBuilder into number1
+//		 */
+//		
+//		
 //		int length = -1;
-		
-		
+//		
+//		
 //		if(number1.length() >= number2.length())
 //		{
 //			length = number1.length() - 1;
@@ -146,18 +146,9 @@ public class StringController
 //		}
 		
 		ajustDecemals();
-		
-		
-		
-		
-		
-		
-		
-		
+
 		System.out.println(number1);
 		System.out.println(number2);
-		
-
 		
 //		for(int index = number1.length()-1; index >= 0; index--)
 //		{
@@ -250,14 +241,7 @@ public class StringController
 		{
 			if(one.charAt(one.length()-1) != '.')
 			{
-				getDigits(one, two);
-				
-				/*
-				 * prints out the amount being carried over
-				 */
-				System.out.println("carried from previous:");
-				System.out.println(carry);
-				
+				getDigits(one, two);				
 				addDigits();
 			}
 			else
@@ -286,10 +270,8 @@ public class StringController
 			result.append(digit1 + digit2 + carry);
 			
 			/*
-			 * prints the result and adds it to the end of total
+			 * adds result to the end of total
 			 */
-			System.out.println("result is:");
-			System.out.println(result.toString());
 			total.append(result.charAt(result.length()-1));
 			result.deleteCharAt(result.length()-1);
 			
@@ -377,9 +359,6 @@ public class StringController
 			
 			StringBuilder sub = new StringBuilder(number1.substring(number1.indexOf(".") + 1));
 			StringBuilder sub2 = new StringBuilder(number2.substring(number2.indexOf(".") + 1));
-			
-//			System.out.println(sub);
-//			System.out.println(sub2);
 			
 			for(int zeros = Math.abs(sub2.length() - sub.length()); zeros > 0; zeros--)
 			{
