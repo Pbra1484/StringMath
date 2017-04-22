@@ -9,7 +9,7 @@ public class StringController
 	StringBuilder number2;
 	StringBuilder total;
 	StringBuilder result;
-	int cNumber;
+//	int cNumber;
 	int carry;
 	private Scanner userInput;
 	int digit1;
@@ -30,23 +30,25 @@ public class StringController
 	public void start()
 	{
 		
-		String exit = "yes";
-		while(exit.equalsIgnoreCase("No")  != true)
+		String exit = "";
+		while(exit.equalsIgnoreCase("Exit")  != true)
 		{
-			System.out.println("Would you like to add somting? (Yes No)");
+			System.out.println("Would you like to add somting or exit? (Add/Exit)");
 			exit = userInput.nextLine();
-			if(exit.equalsIgnoreCase("Yes"))
+			if(exit.equalsIgnoreCase("Add"))
 			{
 				addFromInput();
 			}
 		}
+		System.out.println("Exiting");
 	}
 	
 	private void addFromInput()
 	{
-		System.out.println("Please input two numbers with one or less decimals and no other non number characters");
+		System.out.println("Please input two positive numbers with one or less decimals and no other non number characters");
 		number1.append(userInput.nextLine());
 		number2.append(userInput.nextLine());
+		total.delete(0, total.length());
 		
 		if(isValid(number1) && isValid(number2))
 		{
