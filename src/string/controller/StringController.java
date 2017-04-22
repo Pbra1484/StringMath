@@ -29,6 +29,22 @@ public class StringController
 	
 	public void start()
 	{
+		
+		String exit = "yes";
+		while(exit.equalsIgnoreCase("No")  != true)
+		{
+			System.out.println("Would you like to add somting? (Yes No)");
+			exit = userInput.nextLine();
+			if(exit.equalsIgnoreCase("Yes"))
+			{
+				addFromInput();
+			}
+		}
+	}
+	
+	private void addFromInput()
+	{
+		System.out.println("Please input two numbers with one or less decimals and no other non number characters");
 		number1.append(userInput.nextLine());
 		number2.append(userInput.nextLine());
 		
@@ -36,10 +52,8 @@ public class StringController
 		{
 			System.out.println("valid numbers");
 			
-			ajustDecemals();
+			ajustDecimals();
 
-			System.out.println(number1);
-			System.out.println(number2);
 			
 			if(number1.length() >= number2.length())
 			{
@@ -124,19 +138,14 @@ public class StringController
 		digit1 = Integer.parseInt(Character.toString(one.charAt(one.length()-1)));
 		
 		one.deleteCharAt(one.length()-1);
-		System.out.println("digit 1 is:");
-		System.out.println(digit1);
 		
 		if(two.length() != 0)
 		{
 			digit2 = Integer.parseInt(Character.toString(two.charAt(two.length()-1)));;
 			two.deleteCharAt(two.length()-1);
-			System.out.println("digit 2 is:");
-			System.out.println(digit2);
 		}
 		else
 		{
-			System.out.println("Number 2 complete defalting to 0");
 			digit2 = 0;
 		}
 		
@@ -174,7 +183,7 @@ public class StringController
 		}
 	}
 	
-	private void ajustDecemals()
+	private void ajustDecimals()
 	{
 		if(number1.indexOf(".") != -1 || number2.indexOf(".") != -1)
 		{
