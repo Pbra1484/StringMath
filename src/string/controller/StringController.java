@@ -9,7 +9,6 @@ public class StringController
 	StringBuilder number2;
 	StringBuilder total;
 	StringBuilder result;
-//	int cNumber;
 	int carry;
 	private Scanner userInput;
 	int digit1;
@@ -82,6 +81,8 @@ public class StringController
 		}
 	}
 	
+	//startComplexity
+	
 	private void addFormated(StringBuilder one, StringBuilder two)
 	{
 		for(int index = one.length() - 1; index >= 0; index--)
@@ -108,6 +109,23 @@ public class StringController
 		}
 	}
 	
+	//endComplexity
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//startAbstraction
 	private void addDigits()
 	{
 			/*
@@ -134,6 +152,8 @@ public class StringController
 				carry = 0;
 			}
 	}
+	
+	//endAbstraction
 	
 	private void getDigits(StringBuilder one, StringBuilder two)
 	{
@@ -216,15 +236,4 @@ public class StringController
 			}
 		}
 	}
-	
-
-	
-	
-	
 }
-
-
-
-
-
-
