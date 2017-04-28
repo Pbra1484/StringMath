@@ -32,7 +32,7 @@ public class StringController
 		String exit = "";
 		while(exit.equalsIgnoreCase("Exit")  != true)
 		{
-			System.out.println("Would you like to add somting or exit? (Add/Exit)");
+			System.out.println("Would you like to add something or exit? (Add/Exit)");
 			exit = userInput.nextLine();
 			if(exit.equalsIgnoreCase("Add"))
 			{
